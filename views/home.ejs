@@ -1,0 +1,19 @@
+<%- include("partials/header") -%>
+
+<h1><%= title %></h1>
+<p><%= content %></p>
+<br>
+<hr>
+
+<h1>Posts</h1>
+
+<% posts.forEach(function(post) { %>
+  <div class="post">
+    <h3><span id="post"><%= post.title %></span></h3>
+    <p><%= post && post.content ? post.content.substring(0,100) : 'Content cannot load' %></p>
+    <a class="link" href="<%= post.link %>">Read More</a>
+  </div>
+  <hr>
+<% }); %>
+
+<%- include("partials/footer") -%>

@@ -1,0 +1,22 @@
+<%- include("partials/header") -%>
+
+<h1>News</h1>
+<form class="" action="/admin/news-update" method="post">
+  <input type="text" name="news" value="">
+  <button class="btn btn-info" type="submit">Update</button>
+</form>
+
+<h1>Posts</h1>
+<% posts.forEach(function(post) { %>
+  <h3><%= post.title %> - <%= post.score %>/100</h3>
+  <p><%= post.content.substring(0,100) %>...</p>
+  <input type="text" class="input-group-text" name="modNote" value="">
+  <a class="link" href="<%= post.link %>">Read More</a> <a class="link" href="<%= post.link %>/delete"> / Delete</a>
+  <a class="link" href="<%= post.link %>/edit"> / Edit</a>
+  <hr>
+<% }); %>
+<form class="" action="/admin/delall" method="post">
+  <a class="btn btn-danger" href="/admin/delall">Delete All</a>
+</form>
+
+<%- include("partials/footer") -%>

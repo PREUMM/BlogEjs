@@ -1,0 +1,22 @@
+<%- include("partials/header") -%>
+
+<form class="" action="/" method="post">
+  <div class="form-group">
+    <h1>Compose</h1>
+    <label>Title</label>
+    <input class="form-control" type="text" name="postTitle" value="<%= title %>">
+    <label>Content</label>
+    <textarea style="resize: vertical;" id="lorem" class="form-control" name="postContent" type="text"></textarea>
+    <button class="btn" type="button" name="" onclick="l()">lorem ipsum</button>
+  </div>
+  <button class="btn btn-primary" type="submit" name="" onclick="">Publish</button>
+  <script>
+    function l() {
+      let lorem = "<%= content %>"
+      console.log(lorem);
+      document.getElementById('lorem').innerHTML += lorem;
+    }
+  </script>
+</form>
+
+<%- include("partials/footer") -%>
